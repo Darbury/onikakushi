@@ -714,8 +714,9 @@ void main()
 	DisableWindow();
 	DrawScene("black", 500 );
 	DrawSceneWithMask("scene/103a", "down", 0, 0, 1300 );
-
-//	DrawBustshotWithFiltering( 1, "night/ta_si_wa_a1", "left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(1, 9, "sprite/ta1_warai_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );}
+	if (GetGlobalFlag(GHideCG)) {DrawSceneWithMask("background/y_kawa3", "down", 0, 0, 1300 );}
 
 //「若い人たちはそうは思わなかったみたいだけれど…＠お年寄りたちはオヤシロさまの祟りだと疑わなかったみたいね。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女性</color>", NULL, "<color=#f5e6d3>Woman</color>", NULL, Line_ContinueAfterTyping); }
@@ -735,7 +736,8 @@ void main()
 		   NULL, "The woman with Tomitake-san chuckled mischievously.", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 8, "sprite/tomi1_warai_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );}
 
 //　合わせて富竹さんも笑ったので、俺もつられて笑うことにする￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -743,8 +745,8 @@ void main()
 		   NULL, "Tomitake-san began laughing with her. It was so infectious I ended up laughing as well.", Line_Normal);
 	ClearMessage();
 
-//	DisableWindow();
-//	DrawBustshot( 1, "night/ta_si_de_a1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(1, 9, "sprite/ta1_def_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );}
 
 //「…でも、…今ではどうかしらね＠結構いるんじゃないかしら＠若い人にも。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女性</color>", NULL, "<color=#f5e6d3>Woman</color>", NULL, Line_ContinueAfterTyping); }
@@ -768,10 +770,8 @@ void main()
 		   NULL, "\"A few... what?\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-
-
-//	DisableWindow();
-//	DrawBustshot( 3, "night/tm_si_de_a1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );}
 
 //「信じてる人だよ＠…オヤシロさまの、祟り。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
@@ -824,7 +824,7 @@ void main()
 
 	DisableWindow();
 	DrawSceneWithMask("scene/103b", "down", 0, 0, 1300 );
-//	DrawBustshot( 3, "night/tm_si_ko_a1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 8, "sprite/tomi1_komaru_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );}
 
 //「毎年…綿流しの日になるとね。!w1500/
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
@@ -886,10 +886,21 @@ void main()
 	ClearMessage();
 
 
-	//VoiceMatching
-	if(GetGlobalFlag(GCensor) >= 2){ModCallScriptSection("zonik_009_02_vm0x_n01","dialog000");}
-	if(GetGlobalFlag(GCensor) <= 1){ModCallScriptSection("zonik_009_02_vm00_n01","dialog000");}
-	//VoiceMatchingEnd
+//「さらに翌年＠綿流しの晩＠今度は神社の神主が原因不明の奇病で急死した＠奥さんはその晩の内に沼に入水自殺した。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 8, "org/tomitake0001", 256, TRUE);
+	OutputLine(NULL, "「さらに翌年。",
+		   NULL, "\"Then the next year.", Line_WaitForInput);
+	ModPlayVoiceLS(3, 8, "org/tomitake0002", 256, TRUE);
+	OutputLine(NULL, "綿流しの晩。",
+		   NULL, " The night of the Watanagashi.", Line_WaitForInput);
+	ModPlayVoiceLS(3, 8, "org/tomitake0003", 256, TRUE);
+	OutputLine(NULL, "今度は神社の神主が原因不明の奇病で急死した。",
+		   NULL, " The shrine's Shinto priest died suddenly from an unknown illness.", Line_WaitForInput);
+	ModPlayVoiceLS(3, 8, "org/tomitake0004", 256, TRUE);
+	OutputLine(NULL, "奥さんはその晩の内に沼に入水自殺した。」",
+		   NULL, " His wife drowned herself in the bog that night.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
 
@@ -949,8 +960,8 @@ void main()
 		   NULL, "With that in mind, could the housewife have been involved in some way, too?", Line_Normal);
 	ClearMessage();
 
-//	DisableWindow();
-//	DrawBustshot( 1, "night/ta_si_wa_a1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(1, 9, "sprite/ta1_warai_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );}
 
 //「その通りよ。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女性</color>", NULL, "<color=#f5e6d3>Woman</color>", NULL, Line_ContinueAfterTyping); }
@@ -989,9 +1000,8 @@ void main()
 		   NULL, " happened to be that of the younger brother of the dam supporter who fell to his death two years before.\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-
-
-//	DrawBustshot( 3, "night/tm_si_de_a1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );}
 
 //「弟本人はまだ生きてるらしいね＠でもやはり……かなり気にしてね。近隣の町に引っ越してったらしいよ。￥
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
@@ -1005,8 +1015,7 @@ void main()
 
 	DisableWindow();
 	FadeOutBGM( 2, 1000, TRUE );
-	DrawBustshotWithFiltering(5, "black", "down", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
-
+	DrawSceneWithMask("black", "down", 0, 0, 1300 );
 
 
 //　…しばらくの間、開いた口を閉じることができなかった￥
@@ -1372,7 +1381,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100022", 256, TRUE);
 	OutputLine(NULL, "「………………。」",
-		   NULL, "\"....\"", GetGlobalFlag(GLinemodeSp));
+		   NULL, "\"...\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
@@ -1552,7 +1561,7 @@ void main()
 	ClearMessage();
 
 	DisableWindow();
-	ModDrawCharacter(3, 8, "sprite/tomi1_warai_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+	ModDrawCharacter(3, 8, "sprite/tomi1_warai_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 300, TRUE );
 
 //「まさか圭一くん、祟りなんて信じてるわけじゃないだろ？＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
@@ -1607,7 +1616,7 @@ void main()
 	ClearMessage();
 
 	DisableWindow();
-	ModDrawCharacter(3, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+	ModDrawCharacter(3, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //「……例えば、一番最初のバラバラ殺人＠言ったよね＠　犯人は１人を残して全員逮捕されてる＠残った１人だって時間の問題さ＠動機だって、酒の上での口論からと判明してる＠祟りなんかじゃない＠……だろ？＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
@@ -1623,10 +1632,10 @@ void main()
 	ModPlayVoiceLS(3, 8, "ps3/s01/08/120800060", 256, TRUE);
 	OutputLine(NULL, "残った１人だって時間の問題さ。",
 		   NULL, " It's only a matter of time for the last one.", Line_WaitForInput);
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 8, "ps3/s01/08/120800061", 256, TRUE);
 	OutputLine(NULL, "動機だって、酒の上での口論からと判明してる。",
 		   NULL, " The motive turned out to have been an argument they had while intoxicated. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 8, "ps3/s01/08/120800062", 256, TRUE);
 	OutputLine(NULL, "祟りなんかじゃない。",
 		   NULL, "That's no curse.", Line_WaitForInput);
@@ -1670,7 +1679,7 @@ void main()
 	ClearMessage();
 
 	DisableWindow();
-	ModDrawCharacter(3, 8, "sprite/tomi1_warai_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+	ModDrawCharacter(3, 8, "sprite/tomi1_warai_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //「ははは＠考えてもみなよ圭一くん＠…雛見沢に敵が多かった彼が、地元のお祭りにおちおち参加できると思うかい＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
@@ -1720,19 +1729,19 @@ void main()
 
 //「じゃあ富竹さん…その次に死んだ神主さんはどうです＠　原因不明の奇病だ、って＠…それも、またしても綿流しの日に…。￥
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100026", 256, TRUE);
+	ModPlayVoiceLS(3, 1, "org/keiichi0021", 256, TRUE);
 	OutputLine(NULL, "「じゃあ富竹さん…その次に死んだ神主さんはどうです？",
 		   NULL, "\"Then, Tomitake-san, what about the priest who died after that?", Line_WaitForInput);
-	ModPlayVoiceLS(3, 1, "ps2/01/120100027", 540, TRUE);
+	ModPlayVoiceLS(3, 1, "org/keiichi0022", 256, TRUE);
 	OutputLine(NULL, "　原因不明の奇病だ、って。",
 		   NULL, " The one with the unknown illness.", Line_WaitForInput);
-	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100028", 256, TRUE);
+	ModPlayVoiceLS(3, 1, "org/keiichi0023", 256, TRUE);
 	OutputLine(NULL, "…それも、またしても綿流しの日に…。」",
 		   NULL, " ...That also happened on the day of the festival.\"", Line_Normal);
 	ClearMessage();
 
 	DisableWindow();
-	ModDrawCharacter(3, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+	ModDrawCharacter(3, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //「神主さんはもっと説明が付き易いよ＠綿流しのお祭りは神主さんにとっては年に一度の大行事。過労に体調不良が重なったんだろうね＠あるいは元々持病持ちだったのかもしれない。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>Tomitake</color>", NULL, Line_ContinueAfterTyping); }
@@ -1750,10 +1759,10 @@ void main()
 
 //「でも、奇病ですよ＠　この医学の進歩した時代に原因不明なんて…。￥
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(3, 1, "ps2/01/120100029", 540, TRUE);
+	ModPlayVoiceLS(3, 1, "org/keiichi0024", 256, TRUE);
 	OutputLine(NULL, "「でも、奇病ですよ？",
 		   NULL, "\"But it was an unknown illness.", Line_WaitForInput);
-	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100029", 256, TRUE);
+	ModPlayVoiceLS(3, 1, "org/keiichi0025", 256, TRUE);
 	OutputLine(NULL, "　この医学の進歩した時代に原因不明なんて…。」",
 		   NULL, " It's hard to believe such a thing could exist with all our advances in medicine...\"", Line_Normal);
 	ClearMessage();
@@ -1890,7 +1899,7 @@ void main()
 
 
 	DisableWindow();
-	ModDrawCharacter(3, 8, "sprite/tomi1_warai_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+	ModDrawCharacter(3, 8, "sprite/tomi1_warai_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 
 //　富竹さんが明るく笑う￥
@@ -2053,7 +2062,7 @@ void main()
 
 
 	DisableWindow();
-	ModDrawCharacter(1, 9, "sprite/ta1_warai_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(1, 9, "sprite/ta1_warai_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
 
 //「じゃあね、おやすみなさい圭一くん＠…ジロウさんもね。また後ほど。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女性</color>", NULL, "<color=#f5e6d3>Woman</color>", NULL, Line_ContinueAfterTyping); }

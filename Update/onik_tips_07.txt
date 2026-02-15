@@ -304,7 +304,7 @@ void main()
 //　竜宮レナはレナだ。それ以外の誰でもないさ￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　竜宮レナはレナだ。それ以外の誰でもないさ。",
-		   NULL, "Rena Ryuugu is Rena.  She's nobody other than that.", Line_Normal);
+		   NULL, "Rena Ryuugu is Rena. She's nobody other than that.", Line_Normal);
 	ClearMessage();
 
 //「思ったんだけどさ、自己申請すれば俺も今日からあだ名で呼ばれるのか？＠
@@ -416,7 +416,7 @@ void main()
 		   NULL, " Keiichi-kun and Mii-chan are an evil bailiff and...?", Line_WaitForInput);
 	ModPlayVoiceLS(3, 2, "ps3/s20/02/440200037", 256, TRUE);
 	OutputLine(NULL, "　越後屋だよ？！」",
-		   NULL, " a con man!?\"", Line_Normal);
+		   NULL, " A con man!?\"", Line_Normal);
 	ClearMessage();
 
 //「おのれ竜宮レナの助＠　ここで会ったが百年目でおじゃる＠いざ覚悟～！！＠

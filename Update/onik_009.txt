@@ -70,7 +70,7 @@ void main()
 //　その名も「綿流祭五凶爆闘」！＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　その名も「綿流祭五凶爆闘」！！",
-		   NULL, "It was called the Watanagashi Five-Demon Fire Fight!!", GetGlobalFlag(GLinemodeSp));
+		   NULL, "It was called the Cotton Drifting Five-Demon Fire Fight!!", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
@@ -360,7 +360,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 2, "ps3/s19/02/500200786", 256, TRUE);
 	OutputLine(NULL, "「はぅ！……はいおばさま〜〜〜！",
-		   NULL, "\"Hao!... Yes, Ma'am~~~!", Line_WaitForInput);
+		   NULL, "\"Hau!... Yes, Ma'am~~~!", Line_WaitForInput);
 	ModPlayVoiceLS(3, 2, "ps3/s19/02/500200787", 256, TRUE);
 	OutputLine(NULL, "　圭一くんはレナが命に替えましても〜☆」",
 		   NULL, " Even if it means I must sacrifice myself~.☆\"", GetGlobalFlag(GLinemodeSp));
@@ -507,7 +507,7 @@ void main()
 //　色とりどりの提灯が並び、連なる露店やそれに群がる人々の雑多な雰囲気が、とても心地よい￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　色とりどりの提灯が並び、連なる露店やそれに群がる人々の雑多な雰囲気が、とても心地よい。",
-		   NULL, "Throngs of people were crammed between rows of market stalls lined with colorful paper lanterns.  Despite that, it was actually quite enjoyable.", Line_Normal);
+		   NULL, "Throngs of people were crammed between rows of market stalls lined with colorful paper lanterns. Despite that, it was actually quite enjoyable.", Line_Normal);
 	ClearMessage();
 
 
@@ -693,7 +693,7 @@ void main()
 		   NULL, "\"He's one of my members.", Line_WaitForInput);
 	ModPlayVoiceLS(3, 3, "ps3/s19/03/500300694", 256, TRUE);
 	OutputLine(NULL, "…期待のニューフェイス！　侮ると一晩で屋台潰されるよ！」",
-		   NULL, " ...An upcoming hopeful!  If you cross him, he could crush your stand in one night!\"", GetGlobalFlag(GLinemodeSp));
+		   NULL, " ...An upcoming hopeful! If you cross him, he could crush your stand in one night!\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
@@ -1050,7 +1050,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei33670", 256, TRUE);
 	OutputLine(NULL, "「おっしゃあぁああッ！！」",
-		   NULL, "\"Haoriiight!!\"", Line_Normal);
+		   NULL, "\"Hauuriiight!!\"", Line_Normal);
 	ClearMessage();
 
 	DisableWindow();
@@ -1688,7 +1688,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 5, "ps3/s19/05/500500289", 256, TRUE);
 	OutputLine(NULL, "「…もう見つけてありますです。…圭一もですね？」",
-		   NULL, "\"...We've already found it. ...Keiichi, too?\"", GetGlobalFlag(GLinemodeSp));
+		   NULL, "\"...I've already found it. ...Keiichi, too?\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
@@ -2539,7 +2539,7 @@ void main()
 		   NULL, "\"Gasp!?", Line_WaitForInput);
 	ModPlayVoiceLS(3, 2, "ps3/s19/02/500200835", 256, TRUE);
 	OutputLine(NULL, "　……はぅ、なんだ魅ぃちゃんかぁ……はぅ…。」",
-		   NULL, " ...Hao, oh it's Mii-chan... hau...\"", GetGlobalFlag(GLinemodeSp));
+		   NULL, " ...Hau, oh it's Mii-chan... hau...\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
@@ -2640,10 +2640,10 @@ void main()
 	// (backup) SetValidityOfInput( TRUE );
 
 	OutputLine(NULL, "オットセイ、」",
-		   NULL, " furry little seal.\"", Line_Continue);
+		   NULL, " furry little seal.\"", Line_ContinueAfterTyping);
 
 	// (backup) SetValidityOfInput( FALSE );
-	Wait( 1000 );
+	Wait( 300 );
 	// (backup) SetValidityOfInput( TRUE );
 
 	ClearMessage();
@@ -2690,7 +2690,7 @@ void main()
 	// (backup) SetValidityOfInput( TRUE );
 
 	OutputLine(NULL, "　えぇ？！",
-		   NULL, " Haoh!?", Line_Continue);
+		   NULL, " Hauu!?", Line_Continue);
 
 	// (backup) SetValidityOfInput( FALSE );
 	Wait( 200 );
@@ -2812,7 +2812,7 @@ void main()
 		   NULL, "\"...He said he made it long ago for one of his summer school assignments.", Line_WaitForInput);
 	ModPlayVoiceLS(3, 5, "ps3/s19/05/500500299", 256, TRUE);
 	OutputLine(NULL, "恥ずかしいので滅多に人に見せないとも言ってますですよ。」",
-		   NULL, " He said he doesn't show it other often because it's embarrassing.\"", GetGlobalFlag(GLinemodeSp));
+		   NULL, " He said he doesn't show it to others often because it's embarrassing.\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
@@ -3383,7 +3383,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 3, "ps3/s19/03/500300739", 256, TRUE);
 	OutputLine(NULL, "「ま、こつこつ毎年来てるからね。名誉市民と認定してあげよう！！」",
-		   NULL, "\"Well, he does come around often every year.  I'll make him an honorary citizen!!\"", GetGlobalFlag(GLinemodeSp));
+		   NULL, "\"Well, he does come around often every year. I'll make him an honorary citizen!!\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
@@ -5067,7 +5067,7 @@ void main()
 	OutputLine(NULL, "　一撃ごとに揺れが収まってから撃つのでは何の意味もない！！",
 		   NULL, "It was meaningless to shoot again once it stopped shaking!!", Line_WaitForInput);
 	OutputLine(NULL, "　つまり、富竹さんは連射で勝負に来たのだッ！！！",
-		   NULL, " So Tomitake-san  was relying on rapid fire to win the battle!!!", Line_Normal);
+		   NULL, " So Tomitake-san was relying on rapid fire to win the battle!!!", Line_Normal);
 	ClearMessage();
 
 
@@ -6426,7 +6426,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 3, "ps3/s19/03/500300769", 256, TRUE);
 	OutputLine(NULL, "「はぅ〜、の「は」と「ぅ」の間くらいだったか…",
-		   NULL, "\"Between the 'ha' and 'o' of her hau~ I...", Line_Continue);
+		   NULL, "\"Between the 'ha' and 'u' of her hau~ I...", Line_Continue);
 
 	// (backup) SetValidityOfInput( FALSE );
 	Wait( 300 );

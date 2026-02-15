@@ -1019,7 +1019,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100785", 256, TRUE);
 	OutputLine(NULL, "「…お前らが何の話をしてるのかわからないよ。",
-		   NULL, "\"... I don't understand what you guys are talking about.", Line_WaitForInput);
+		   NULL, "\"...I don't understand what you guys are talking about.", Line_WaitForInput);
 	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100786", 256, TRUE);
 	OutputLine(NULL, "……その監督が俺と何か関係あるのか？",
 		   NULL, " What does that director have to do with me?", GetGlobalFlag(GLinemodeSp));
@@ -2970,7 +2970,7 @@ void main()
 //　真っ暗になったブラウン管の向こうで.........恐ろしい映像を流し続けている...￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　真っ暗になったブラウン管の向こうで………恐ろしい映像を流し続けている…。",
-		   NULL, "On the other end of that pitch-black screen... that horrifying video was still playing on...", Line_Normal);
+		   NULL, "On the other end of that pitch-black screen... that horrifying video was still playing...", Line_Normal);
 	ClearMessage();
 
 	DisableWindow();
@@ -3665,7 +3665,7 @@ void main()
 //　......その死は警察が確認しているはずでは...￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　……その死は警察が確認しているはずでは…？",
-		   NULL, "...The police should have confirmed that death...?", Line_Normal);
+		   NULL, "...The police should have confirmed that death...", Line_Normal);
 	ClearMessage();
 
 //　でもレナと魅音は確かに、監督を呼んだと言った＠

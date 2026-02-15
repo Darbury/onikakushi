@@ -50,13 +50,13 @@ void dialog002()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　手早く目当てのラーメンの箱を探しに行く。",
-		   NULL, "I quickly search the cases of noodles for what I want.", Line_Normal);
+		   NULL, "I quickly searched the cases of noodles for what I wanted.", Line_Normal);
 	ClearMessage();
 
 
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>圭一の母</color>", NULL, "<color=#f5e6d3>Keiichi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「豚骨ショウガ味、デカカップ？",
-		   NULL, "\"Pork -bone & Ginger, large cup?", Line_WaitForInput);
+		   NULL, "\"Pork-bone & Ginger, large cup?", Line_WaitForInput);
 	OutputLine(NULL, "　ねぇ圭一、もう少し普通のにしない？」",
 		   NULL, " Hey, Keiichi, can't you get a more normal one?\"", Line_Normal);
 	ClearMessage();

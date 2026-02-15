@@ -872,7 +872,7 @@ void main()
 		   NULL, "\"That's great.", Line_WaitForInput);
 	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700197", 256, TRUE);
 	OutputLine(NULL, "実は私、お昼に行こうとしてたんですよ。よかったらご一緒にいかがです？",
-		   NULL, " I'm just about to get lunch myself.  Would you mind going together?", Line_WaitForInput);
+		   NULL, " I'm just about to get lunch myself. Would you mind going together?", Line_WaitForInput);
 	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700198", 256, TRUE);
 	OutputLine(NULL, "　…………あぁ、お体に障る様でしたら構いませんよ。」",
 		   NULL, " ...Ah, if you're not feeling up for it, then don't mind me.\"", Line_Normal);
@@ -1057,7 +1057,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100278", 256, TRUE);
 	OutputLine(NULL, "「あの、…漫画なんかによくあるじゃないですか。",
-		   NULL, "\"Um... you know that thing you see in comics all the time?", Line_WaitForInput);
+		   NULL, "\"Um... you know that thing you see in manga all the time?", Line_WaitForInput);
 	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100279", 256, TRUE);
 	OutputLine(NULL, "体内に取り込まれると分解したりして、証拠が何も残らないなんて、そんな薬…。」",
 		   NULL, " Where there's a drug that doesn't leave any traces after being consumed...\"", GetGlobalFlag(GLinemodeSp));
@@ -2294,10 +2294,15 @@ void main()
 		   NULL, "I couldn't even imagine it.", Line_Normal);
 	ClearMessage();
 
-	//VoiceMatching
-	if(GetGlobalFlag(GCensor) >= 3){ModCallScriptSection("zonik_012_vm0x_n01","dialog000");}
-	if(GetGlobalFlag(GCensor) <= 2){ModCallScriptSection("zonik_012_vm00_n01","dialog000");}
-	//VoiceMatchingEnd
+//「３日間の謹慎が明けた後も復学しなかったようです＠その間に神経科に通院し、自律神経失調症と診断され、何週間かの間、投薬と医師によるカウンセリングを受けています。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "org/ooishi0003", 256, TRUE);
+	OutputLine(NULL, "「３日間の謹慎が明けた後も復学しなかったようです。",
+		   NULL, "\"It seems that, after her three day suspension, she didn't return to school.", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "org/ooishi0004", 256, TRUE);
+	OutputLine(NULL, "その間に神経科に通院し、自律神経失調症と診断され、何週間かの間、投薬と医師によるカウンセリングを受けています。」",
+		   NULL, " She went to a neurologist and was diagnosed with dysautonomia. She was given weeks of counseling and medication.\"", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 
 //　ノイローゼみたいなものだろうか＠
@@ -2311,7 +2316,7 @@ void main()
 //　…そういうのは几帳面な人や神経質な人がかかると聞いたことがある＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　…そういうのは几帳面な人や神経質な人がかかると聞いたことがある。",
-		   NULL, "... I'd heard that it happens to people who are really methodical or overly sensitive.", GetGlobalFlag(GLinemodeSp));
+		   NULL, "...I'd heard that it happens to people who are really methodical or overly sensitive.", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 
@@ -4104,8 +4109,9 @@ void main()
 	OutputLine(NULL, "　扉の隙間から片目だけを覗かせて、再び魅音の鷹の目が俺を貫いた。",
 		   NULL, "A single eye peered in through that narrow slit, and Mion's hawkish gaze peered at me once again.", Line_Normal);
 	ClearMessage();
-//	DisableWindow();
-//	DrawBustshotWithFiltering( 2, "me_si_him_a1", "left", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+	DisableWindow();
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(2, 3, "sprite/me2_hig_maji_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );}
+	if (GetGlobalFlag(GHideCG)) {DrawScene("background/ma_g2", 200 );}
 	FadeFilm( 600 , TRUE );
 //「じゃあね圭ちゃん。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }

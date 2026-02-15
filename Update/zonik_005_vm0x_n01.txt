@@ -25,11 +25,6 @@ void dialog000()
 
 void dialog001()
 {
-//　それはみんなランディーくん同様、町を歩けばどこかで見かけるようなものばかりだった＠
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "　それはみんなランディーくん同様、町を歩けばどこかで見かけるようなものばかりだった。",
-		   NULL, "They were all the same as Colonel Randy: stuff you'd see while walking around in town.", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 }
 
 void dialog002()
@@ -121,6 +116,6 @@ void dialog006()
 //　きゅぴーんという音が３回した。３ゲージ技かッ？￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　きゅぴーんという音が響いた。いきなり奥義発動かよ？！",
-		   NULL, "A \"zhazhing\" sound echoed loudly.  He went straight for the special move!?", Line_Normal);
+		   NULL, "A \"zhazhing\" sound echoed loudly. He went straight for the special move!?", Line_Normal);
 	ClearMessage();
 }
